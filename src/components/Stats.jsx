@@ -31,9 +31,9 @@ export default function Stats() {
         <StatCard lg title="Active Caffiene Level"> 
           <div className="flex gap-2  items-center" >
             <p><span className="text-4xl ">{caffeineLevel}</span> mg</p>
-            <h5 className={" p-2 rounded-md w-12 text-center mt-2 " + (warningLevel === 'low' ? 'text-green-400 bg-green-700': warningLevel === 'moderate' ? 'text-orange-300 bg-orange-500 pr-4' : 'text-red-300 bg-red-600')}>{warningLevel}</h5>
+            <h5 className={" p-2 rounded-md w-12 text-center mt-2 " + (warningLevel === 'low' ? 'text-green-400 bg-green-700': warningLevel === 'moderate' ? 'text-orange-300 bg-orange-500 w-16' : 'text-red-300 bg-red-600')}>{warningLevel}</h5>
           </div>
-          <p>{statusLevels['low'].description}</p>
+          <p>{ ( warningLevel === 'low' ?  statusLevels['low'].description : warningLevel === 'moderate' ? statusLevels['moderate'].description : statusLevels['high'].description }</p>
 
         </StatCard>
         <StatCard title="Daily Caffiene " >
