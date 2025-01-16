@@ -33,7 +33,7 @@ export default function Stats() {
             <p><span className="text-4xl ">{caffeineLevel}</span> mg</p>
             <h5 className={" p-2 rounded-md w-12 text-center mt-2 " + (warningLevel === 'low' ? 'text-green-400 bg-green-700': warningLevel === 'moderate' ? 'text-orange-300 bg-orange-500 w-16' : 'text-red-300 bg-red-600')}>{warningLevel}</h5>
           </div>
-          <p>{ ( warningLevel === 'low' ?  statusLevels['low'].description : warningLevel === 'moderate' ? statusLevels['moderate'].description : statusLevels['high'].description }</p>
+          <p>{ ( warningLevel === 'low' ?  statusLevels['low'].description : warningLevel === 'moderate' ? statusLevels['moderate'].description : statusLevels['high'].description) }</p>
 
         </StatCard>
         <StatCard title="Daily Caffiene " >
