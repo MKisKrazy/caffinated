@@ -11,11 +11,11 @@ export default function Layout(props) {
   
   const header = (<header className="font-mono flex justify-between top-1">
             <div className="px-2 pt-2">
-                <h1 className="text-3xl pt-1 font-bold font-serif" >CAFFINATED</h1>
-                <p className="px-2 text-sm">For Coffee Insatiates</p>
+                <h1 className="text-xl pt-1 font-bold font-serif md:text-3xl" >CAFFINATED</h1>
+                <p className="text-xs md:px-2 md:text-sm">For Coffee Insatiates</p>
             </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 md:gap-4 m-0 p-0">
             <button onClick={()=>{
               if(document.getElementById('html').classList.contains("dark")){
                 document.getElementById('html').classList.remove("dark")
@@ -26,13 +26,13 @@ export default function Layout(props) {
               } 
             }}><i className={darkMode ? "fa-solid fa-sun" : 'fa-solid fa-moon'}/></button>
 
-{ globalUser ? (<button onClick={()=>{logout()}} className="flex gap-3 py-3 px-2 justify-center bg-blue-300 m-2 rounded-md items-center shadow-xl hover:scale-105 dark:bg-blue-900">
+{ globalUser ? (<button onClick={()=>{logout()}} className="flex gap-1 py-3 px-2 justify-center bg-blue-300 m-1 rounded-md items-center shadow-xl hover:scale-105 dark:bg-blue-900">
                 <p>Logout</p>
                 <i className="fa-solid fa-mug-hot"></i>
             </button>):(
               <button onClick={()=>{
                 setShowModal(true)
-              }} className="flex gap-3 py-3 px-2 justify-center bg-blue-300 m-2 rounded-md items-center shadow-xl hover:scale-105 dark:bg-blue-900">
+              }} className="flex gap-1 py-3 px-1 justify-center bg-blue-300 m-1 rounded-md items-center shadow-xl hover:scale-105 dark:bg-blue-900">
                   <p>Sign up free</p>
                   <i className="fa-solid fa-mug-hot"></i>
               </button>
