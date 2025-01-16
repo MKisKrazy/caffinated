@@ -15,7 +15,7 @@ export default function Layout(props) {
                 <p className="text-xs md:px-2 md:text-sm">For Coffee Insatiates</p>
             </div>
             
-            <div className="flex items-center gap-2 md:gap-4 m-0 p-0">
+            <div className="flex items-center justify-center gap-2 md:gap-4 m-0 p-0">
             <button onClick={()=>{
               if(document.getElementById('html').classList.contains("dark")){
                 document.getElementById('html').classList.remove("dark")
@@ -44,7 +44,7 @@ export default function Layout(props) {
   </header>)
 
   const footer =(<footer className="font-mono text-center bottom-0 mt-8">
-    <p><span >Caffinated</span> was made by <a target="_blank" href="https://www.linkedin.com/in/maheshkrishna02/">Mahesh Krishna</a> &nbsp;using ReactJs.<br/>Check out the project on <a target="_blank" href="https://www.github.com/jamezmca/reactjs-full-course">GitHub</a>!</p>
+    <p><span >Caffinated</span> was made by <a className="underline" target="_blank" href="https://www.linkedin.com/in/maheshkrishna02/"><span className="underline">Mahesh Krishna</span></a> &nbsp;using ReactJs.<br/>Check out the project on <a  target="_blank" href="https://www.github.com/jamezmca/reactjs-full-course"><span className="underline">GitHub</span></a>!</p>
 </footer>) 
 
   function handleCloseModal(){
