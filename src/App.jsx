@@ -19,7 +19,7 @@ function App() {
   )
 
   return (
-    <Layout>
+    <Layout >
       <Hero />
       <CoffeeForm isAuthenticated={isAuthenticated} />
       {(isAuthenticated && isLoading) &&

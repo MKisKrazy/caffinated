@@ -7,14 +7,26 @@ export default function Layout(props) {
   const { children } = props;
   const [showModal,setShowModal]=useState(false)
   const {globalUser,logout}= useAuth()
-
+  const [darkMode,setDarkMode]=useState(false)
+  
   const header = (<header className="font-mono flex justify-between top-1">
             <div className="px-2 pt-2">
                 <h1 className="text-3xl pt-1 font-bold font-serif" >CAFFINATED</h1>
                 <p className="px-2 text-sm">For Coffee Insatiates</p>
             </div>
+            
+            <div className="flex items-center gap-4">
+            <button onClick={()=>{
+              if(document.getElementById('html').classList.contains("dark")){
+                document.getElementById('html').classList.remove("dark")
+                setDarkMode(true)
+              }else{
+                document.getElementById('html').classList.add("dark")
+                setDarkMode(false)
+              } 
+            }}><i className={darkMode ? "fa-solid fa-moon" : 'fa-solid fa-sun'}/></button>
 
-            { globalUser ? (<button onClick={()=>{logout()}} className="flex gap-3 py-3 px-2 justify-center bg-blue-300 m-2 rounded-md items-center shadow-xl hover:scale-105 dark:bg-blue-900">
+{ globalUser ? (<button onClick={()=>{logout()}} className="flex gap-3 py-3 px-2 justify-center bg-blue-300 m-2 rounded-md items-center shadow-xl hover:scale-105 dark:bg-blue-900">
                 <p>Logout</p>
                 <i className="fa-solid fa-mug-hot"></i>
             </button>):(
@@ -26,6 +38,9 @@ export default function Layout(props) {
               </button>
             )
             }
+            </div>
+            
+            
   </header>)
 
   const footer =(<footer className="font-mono text-center bottom-0 mt-8">
