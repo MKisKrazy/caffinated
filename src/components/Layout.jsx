@@ -19,12 +19,12 @@ export default function Layout(props) {
             <button onClick={()=>{
               if(document.getElementById('html').classList.contains("dark")){
                 document.getElementById('html').classList.remove("dark")
-                setDarkMode(true)
+                setDarkMode(false)
               }else{
                 document.getElementById('html').classList.add("dark")
-                setDarkMode(false)
+                setDarkMode(true)
               } 
-            }}><i className={darkMode ? "fa-solid fa-moon" : 'fa-solid fa-sun'}/></button>
+            }}><i className={darkMode ? "fa-solid fa-sun" : 'fa-solid fa-moon'}/></button>
 
 { globalUser ? (<button onClick={()=>{logout()}} className="flex gap-3 py-3 px-2 justify-center bg-blue-300 m-2 rounded-md items-center shadow-xl hover:scale-105 dark:bg-blue-900">
                 <p>Logout</p>
