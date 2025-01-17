@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useState, useEffect,useContext, createContext } from "react";
 import { auth, db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
@@ -30,7 +30,11 @@ export default function AuthProvider(props){
         return signOut(auth)
     }
 
-    const value={ globalUser,globalData,setGlobalData,isLoading ,signup,login,logout }
+    function resetPassword(email){
+        return sendPasswordResetEmail(auth,email)
+    }
+
+    const value={ globalUser,globalData,setGlobalData,isLoading ,signup,login,logout,resetPassword }
 
     useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth,async (user)=>{
